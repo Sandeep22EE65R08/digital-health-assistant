@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://digital-health-assistant.onrender.com/" />
 
   <!-- Theme + Icons -->
-  <meta name="theme-color" content="#10b981" />
+  <meta name="theme-color" content="#0ea5e9" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="apple-touch-icon" href="/favicon.svg" />
 
@@ -63,28 +63,84 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="bg-orbs" aria-hidden="true">
-    <span class="orb orb-1"></span>
-    <span class="orb orb-2"></span>
-    <span class="orb orb-3"></span>
-  </div>
-
   <header class="site-header">
-    <div class="brand">
+    <a href="/" class="brand" style="text-decoration:none;color:inherit;">
       <span class="logo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-9-9.5C1.5 6 6 3 9 5c1.5 1 2.5 2.5 3 4 .5-1.5 1.5-3 3-4 3-2 7.5 1 6 6.5-2 5-9 9.5-9 9.5z"/></svg>
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
       </span>
       <div>
         <h1>AI Digital Health Assistant</h1>
         <p class="tagline">Calm, clear guidance — powered by AI</p>
       </div>
-    </div>
-    <span id="modeBadge" class="mode-badge">checking…</span>
+    </a>
+    <nav class="header-nav">
+      <a href="/" class="nav-link active">Home</a>
+      <a href="/report.html" class="nav-link">Analyze Report</a>
+      <span id="modeBadge" class="mode-badge">checking…</span>
+    </nav>
   </header>
+
+  <section class="hero">
+    <div class="hero__content">
+      <span class="hero__eyebrow">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        Free · Open-source · Educational use
+      </span>
+      <h2>Your friendly <span>AI health companion</span> for symptoms &amp; lab reports</h2>
+      <p class="hero__lead">
+        Describe what you're feeling or upload a lab report — get a calm, clear
+        explanation in your language, with normal ranges and next steps. Never a substitute
+        for a doctor, always here to help you understand.
+      </p>
+      <div class="hero__cta">
+        <a href="#intakeForm" class="primary-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Describe symptoms
+        </a>
+        <a href="/report.html" class="ghost-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Analyze a PDF report
+        </a>
+      </div>
+    </div>
+    <div class="hero__image">
+      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"
+           alt="Doctor reviewing medical chart with stethoscope" loading="eager" />
+    </div>
+  </section>
+
+  <section class="features" aria-label="What this assistant does">
+    <article class="feature">
+      <span class="feature__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </span>
+      <h3>Symptom analysis</h3>
+      <p>Describe how you feel — get likely causes, red flags, and home-care suggestions in plain language.</p>
+    </article>
+    <article class="feature">
+      <span class="feature__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+      </span>
+      <h3>Lab report decoding</h3>
+      <p>Upload a PDF lab report. Each value is mapped to its normal range with an easy-to-read summary.</p>
+    </article>
+    <article class="feature">
+      <span class="feature__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </span>
+      <h3>Follow-up chat</h3>
+      <p>Ask questions about your results — the assistant remembers context and keeps the explanation clear.</p>
+    </article>
+  </section>
 
   <main class="layout">
     <aside class="panel intake">
-      <h2>Tell us about you</h2>
+      <h2>
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </span>
+        Tell us about you
+      </h2>
       <form id="intakeForm" autocomplete="off">
         <label>
           Symptoms / Question
@@ -136,15 +192,10 @@
         </div>
       </form>
 
-      <button id="openReportModal" type="button" class="report-link">
-        <span class="report-link__icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
-        </span>
-        <span class="report-link__text">
-          <strong>Have a test report?</strong>
-          <span>Upload a PDF and get insights →</span>
-        </span>
-      </button>
+      <a href="/report.html" class="ghost-btn" style="width:100%;margin-top:6px;">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        Have a PDF report? Analyze it →
+      </a>
 
       <div class="disclaimer">
         <strong>Disclaimer:</strong> This tool offers general health education.
@@ -154,6 +205,12 @@
     </aside>
 
     <section class="panel chat">
+      <h2>
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </span>
+        AI Health Assistant
+      </h2>
       <div id="messages" class="messages" aria-live="polite"></div>
 
       <form id="chatForm" class="chat-form">
@@ -163,46 +220,10 @@
     </section>
   </main>
 
-  <div id="reportModal" class="modal" hidden aria-hidden="true" role="dialog" aria-labelledby="reportModalTitle">
-    <div class="modal__backdrop" data-close-modal></div>
-    <div class="modal__panel panel" role="document">
-      <button type="button" class="modal__close" data-close-modal aria-label="Close">×</button>
-      <header class="modal__header">
-        <h2 id="reportModalTitle">Analyze a Medical Report</h2>
-        <p class="modal__sub">Upload a lab or test report (PDF) and get a calm, simple breakdown.</p>
-      </header>
-
-      <form id="reportForm" class="modal__body">
-        <label class="dropzone" id="reportDropzone">
-          <input id="reportFile" type="file" accept="application/pdf,.pdf" hidden />
-          <div class="dropzone__inner">
-            <span class="dropzone__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-            </span>
-            <div class="dropzone__title">Click to choose a PDF or drop it here</div>
-            <div class="dropzone__hint">Max 10 MB · text-based PDFs work best</div>
-            <div id="reportFileName" class="dropzone__file" hidden></div>
-          </div>
-        </label>
-
-        <label class="modal__field">
-          <span>Language</span>
-          <select id="reportLanguage">
-            <option value="English">English</option>
-            <option value="Hindi">Hindi (हिंदी)</option>
-            <option value="Hinglish">Hinglish</option>
-          </select>
-        </label>
-
-        <div class="modal__actions">
-          <button type="button" class="ghost-btn" data-close-modal>Cancel</button>
-          <button id="reportSubmit" type="submit" class="primary-btn" disabled>Analyze Report</button>
-        </div>
-      </form>
-
-      <div id="reportResult" class="modal__result" hidden></div>
-    </div>
-  </div>
+  <footer class="site-footer">
+    Built with care for educational use only · Not a substitute for medical advice ·
+    <a href="https://github.com/Sandeep22EE65R08/digital-health-assistant" rel="noopener" target="_blank">Source on GitHub</a>
+  </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
