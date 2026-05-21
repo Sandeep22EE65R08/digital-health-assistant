@@ -12,9 +12,9 @@ services:
         value: 3.11.9
       # Override these in the Render dashboard if you switch providers.
       - key: AI_API_BASE
-        value: https://api.x.ai/v1
+        value: https://generativelanguage.googleapis.com/v1beta/openai
       - key: AI_API_MODEL
-        value: grok-4.20-reasoning
+        value: gemini-2.5-flash
       # Set this manually in the dashboard (never committed).
       - key: AI_API_KEY
         sync: false
