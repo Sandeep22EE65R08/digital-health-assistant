@@ -1,8 +1,10 @@
 # AI Digital Health Assistant
 
-A calm, document-style web app that helps users understand their **symptoms** and
+A calm, multi-page web app that helps users understand their **symptoms** and
 **medical / lab reports** in simple language — powered by Google Gemini.
 Educational only; does not replace a real doctor.
+
+🌐 **Live:** https://digital-health-assistant.onrender.com/
 
 > ⚠️ **Disclaimer:** This tool provides general health education. It does **not**
 > diagnose, prescribe, or replace a qualified healthcare professional. In an
@@ -12,10 +14,15 @@ Educational only; does not replace a real doctor.
 
 ## ✨ Features
 
+- **Three-page Medical Sky UI** — clean light theme with a marketing **home**
+  page (hero + features), a dedicated **/symptoms.html** page for symptom intake
+  + follow-up chat, and a dedicated **/report.html** page for PDF analysis.
 - **Symptom analysis** — enter symptoms, age, gender, medical history, language;
   get a structured AI breakdown (Summary, Possible Causes, Severity, Suggested
   Doctor, Suggested Tests, Lifestyle Suggestions, Disclaimer).
-- **Free-form follow-up chat** — keep asking questions about the same case.
+- **ChatGPT-style follow-up chat** — every analysis and follow-up answer is
+  appended to the conversation; previous results stay visible until you click
+  **New chat**.
 - **PDF medical-report analysis** — upload a lab/test report (PDF) and get a
   parameter-by-parameter table (Value · Normal Range · Status · What It Means),
   abnormal findings, the right specialist for each, follow-up tests, and a
@@ -25,8 +32,8 @@ Educational only; does not replace a real doctor.
 - **Multilingual** — English, Hindi, Hinglish.
 - **Safe demo fallback** — if no AI key is configured (or the AI is rate-limited),
   a rule-based responder still returns safe educational guidance.
-- **Cinematic dark-mode UI** — glassmorphism panels, animated background orbs,
-  GitHub-flavored markdown rendering with `marked.js` + `DOMPurify`.
+- **SEO-ready** — meta + Open Graph tags, JSON-LD `WebApplication` schema,
+  `sitemap.xml`, `robots.txt`, custom favicon and OG image.
 
 ---
 
@@ -37,7 +44,9 @@ Educational only; does not replace a real doctor.
 - **AI provider:** Google Gemini via OpenAI-compatible endpoint
   (`gemini-2.5-flash` by default — supports text + vision)
 - **Frontend:** Static HTML / CSS / vanilla JS (no build step),
-  `marked.js`, `DOMPurify`, Google Fonts (Inter + Space Grotesk)
+  `marked.js`, `DOMPurify`, Google Fonts (Inter + Space Grotesk),
+  Medical Sky light theme (sky-blue / cyan palette on white)
+- **Deployment:** Render (Procfile + render.yaml), gunicorn
 
 ---
 
@@ -53,9 +62,21 @@ digital health assistant/
 │  ├─ .env                # ← your real API key lives here (gitignored)
 │  └─ .env.example        # template (no real secret)
 ├─ frontend/
-│  ├─ index.html
-│  ├─ styles.css
-│  └─ js/app.js
+│  ├─ index.html          # Landing page (hero + features)
+│  ├─ symptoms.html       # Intake form + ChatGPT-style follow-up chat
+│  ├─ report.html         # PDF upload + analysis
+│  ├─ styles.css          # Medical Sky theme
+│  ├─ favicon.svg
+│  ├─ og-image.svg
+│  ├─ sitemap.xml
+│  ├─ robots.txt
+│  └─ js/
+│     ├─ home.js          # Health badge on the landing page
+│     ├─ app.js           # Symptom analysis + follow-up chat
+│     └─ report.js        # PDF upload flow
+├─ Procfile               # Render / Heroku-style start command
+├─ render.yaml            # Render blueprint (one-click deploy)
+├─ runtime.txt            # Pinned Python version
 ├─ .gitignore
 └─ README.md
 ```
@@ -103,8 +124,15 @@ python app.py
 ```
 
 Open **http://127.0.0.1:5000/** in your browser. The badge in the header should
-read **"Live AI (gemini-2.5-flash)"**. If it says "Demo mode", your key is not
-being read.
+read **"Live AI"**. If it says "Demo mode", your key is not being read.
+
+The site has three pages:
+
+| Path | Purpose |
+|---|---|
+| `/` | Landing page (hero + features) |
+| `/symptoms.html` | Symptom intake form + follow-up chat |
+| `/report.html` | PDF report upload + analysis |
 
 ---
 
@@ -138,6 +166,19 @@ All endpoints return JSON.
   variables** — do not bake them into the repo.
 - A production WSGI server like `gunicorn` is recommended instead of
   `python app.py` for hosting.
+
+### Deploy to Render (one-click)
+
+This repo ships with `render.yaml`, `Procfile`, and `runtime.txt` for
+zero-config deployment:
+
+1. Push the repo to GitHub.
+2. On https://render.com → **New +** → **Blueprint** → connect the repo.
+3. Set `AI_API_KEY` in the environment variables.
+4. Deploy — Render reads `render.yaml` and builds the service.
+
+> ⚠️ Free tier instances sleep after 15 min of inactivity. Use a free uptime
+> pinger (e.g. UptimeRobot) on `/api/health` if you need always-on availability.
 
 ---
 

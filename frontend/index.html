@@ -75,6 +75,7 @@
     </a>
     <nav class="header-nav">
       <a href="/" class="nav-link active">Home</a>
+      <a href="/symptoms.html" class="nav-link">Symptoms</a>
       <a href="/report.html" class="nav-link">Analyze Report</a>
       <span id="modeBadge" class="mode-badge">checking…</span>
     </nav>
@@ -93,7 +94,7 @@
         for a doctor, always here to help you understand.
       </p>
       <div class="hero__cta">
-        <a href="#intakeForm" class="primary-btn">
+        <a href="/symptoms.html" class="primary-btn">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           Describe symptoms
         </a>
@@ -133,100 +134,11 @@
     </article>
   </section>
 
-  <main class="layout">
-    <aside class="panel intake">
-      <h2>
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        </span>
-        Tell us about you
-      </h2>
-      <form id="intakeForm" autocomplete="off">
-        <label>
-          Symptoms / Question
-          <textarea id="symptoms" rows="4"
-            placeholder="e.g. Headache for 3 days, mild fever, tiredness"></textarea>
-        </label>
-
-        <div class="row">
-          <label>
-            Age
-            <input id="age" type="number" min="0" max="120" placeholder="e.g. 28" />
-          </label>
-          <label>
-            Gender
-            <select id="gender">
-              <option value="">Select</option>
-              <option>Female</option>
-              <option>Male</option>
-              <option>Other</option>
-              <option>Prefer not to say</option>
-            </select>
-          </label>
-        </div>
-
-        <label>
-          Medical history (optional)
-          <textarea id="history" rows="2"
-            placeholder="e.g. Diabetes, asthma, allergies"></textarea>
-        </label>
-
-        <label>
-          Language
-          <select id="language">
-            <option value="English">English</option>
-            <option value="Hindi">Hindi (हिंदी)</option>
-            <option value="Hinglish">Hinglish</option>
-          </select>
-        </label>
-
-        <label>
-          Medical report text (optional)
-          <textarea id="reportText" rows="3"
-            placeholder="Paste lab report values here (e.g. Hb 9.5, TSH 6.2)"></textarea>
-        </label>
-
-        <div class="actions">
-          <button id="analyzeBtn" type="submit" class="primary-btn">Analyze</button>
-          <button id="clearBtn" type="button" class="ghost-btn">Clear</button>
-        </div>
-      </form>
-
-      <a href="/report.html" class="ghost-btn" style="width:100%;margin-top:6px;">
-        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Have a PDF report? Analyze it →
-      </a>
-
-      <div class="disclaimer">
-        <strong>Disclaimer:</strong> This tool offers general health education.
-        It does not diagnose, treat, or replace a qualified healthcare professional.
-        In an emergency, contact local emergency services immediately.
-      </div>
-    </aside>
-
-    <section class="panel chat">
-      <h2>
-        <span class="icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-        </span>
-        AI Health Assistant
-      </h2>
-      <div id="messages" class="messages" aria-live="polite"></div>
-
-      <form id="chatForm" class="chat-form">
-        <input id="chatInput" type="text" placeholder="Ask a follow-up question…" />
-        <button type="submit" class="primary-btn">Send</button>
-      </form>
-    </section>
-  </main>
-
   <footer class="site-footer">
     Built with care for educational use only · Not a substitute for medical advice ·
     <a href="https://github.com/Sandeep22EE65R08/digital-health-assistant" rel="noopener" target="_blank">Source on GitHub</a>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/home.js"></script>
 </body>
 </html>

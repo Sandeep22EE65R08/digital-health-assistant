@@ -80,16 +80,13 @@
   }
 
   async function runAnalyze(displayText) {
-    clearMessages();
     addMessage("user", displayText);
     const thinking = addMessage("assistant", thinkingMarkup(), { raw: true });
     try {
       const data = await postJSON("/api/analyze", readIntake());
       thinking.innerHTML = renderReply(data);
-      conversation = [
-        { role: "user", content: displayText },
-        { role: "assistant", content: data.reply }
-      ];
+      conversation.push({ role: "user", content: displayText });
+      conversation.push({ role: "assistant", content: data.reply });
     } catch (err) {
       thinking.innerHTML = `<div class="error-note">⚠️ ${escapeHTML(err.message)}</div>`;
     }
