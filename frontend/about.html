@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>About — AI Digital Health Assistant</title>
-  <meta name="description" content="About the AI Digital Health Assistant — an open-source, educational health companion built by Sandeep Kumar to make medical information easier to understand. Powered by Google Gemini." />
+  <meta name="description" content="About the AI Digital Health Assistant: a free, open-source tool that explains symptoms and decodes lab reports (PDFs and phone photos) in English, Hindi or Hinglish. Built by Sandeep Kumar, powered by Google Gemini." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://digital-health-assistant.onrender.com/about.html" />
 
@@ -51,38 +51,144 @@
       Back to home
     </a>
 
-    <header class="page-header">
-      <h2>About this project</h2>
-      <p>An open-source, educational health companion built to make medical information easier to understand.</p>
-    </header>
+    <section class="about-hero">
+      <div class="about-hero__content">
+        <span class="hero__eyebrow">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          About the project
+        </span>
+        <h2>Turning confusing medical jargon into <span>calm, clear answers</span></h2>
+        <p class="hero__lead">
+          The AI Digital Health Assistant is a free, open-source tool that helps everyday people understand
+          their symptoms and lab reports in plain language — English, Hindi, or Hinglish. Powered by
+          Google's Gemini AI, it reads PDFs, scanned reports and even phone photos of paper test results,
+          then explains every value with its normal range and what it could mean. Built so you walk into
+          the doctor's office with better questions, not more fear.
+        </p>
+        <div class="stat-pills">
+          <span class="stat-pill"><strong>100%</strong> free forever</span>
+          <span class="stat-pill"><strong>Open</strong> source</span>
+          <span class="stat-pill"><strong>3</strong> languages</span>
+          <span class="stat-pill"><strong>0</strong> accounts required</span>
+        </div>
+      </div>
+      <div class="about-hero__image">
+        <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=900&q=80"
+             alt="Doctor explaining a medical chart to a patient" loading="eager" />
+      </div>
+    </section>
 
-    <section>
-      <div class="about-grid">
-        <div>
-          <h3>Why it exists</h3>
-          <p>Most people get a lab report or feel a symptom and end up doom-scrolling unclear search results. This assistant gives a calm, structured first read — so you walk into the doctor's office with better questions, not more fear.</p>
+    <section class="about-section">
+      <h3 class="section-title">What it can do for you</h3>
+      <div class="feat-grid">
+        <article class="feat-card">
+          <span class="feat-card__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </span>
+          <h4>Explain your symptoms</h4>
+          <p>Describe how you feel and get a structured breakdown — possible causes, severity, red-flag warnings, suggested specialist, useful tests and simple home-care steps.</p>
+        </article>
+        <article class="feat-card">
+          <span class="feat-card__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
+          </span>
+          <h4>Decode lab reports</h4>
+          <p>Upload a PDF or a phone photo of a printed report. Every parameter is mapped to its normal range, abnormal values are flagged, and you get a friendly summary of what they might mean.</p>
+        </article>
+        <article class="feat-card">
+          <span class="feat-card__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg>
+          </span>
+          <h4>Read handwriting &amp; scans</h4>
+          <p>Gemini's vision model reads scanned PDFs and phone photos directly — including handwritten reference ranges. No need to retype anything.</p>
+        </article>
+        <article class="feat-card">
+          <span class="feat-card__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </span>
+          <h4>Follow-up like ChatGPT</h4>
+          <p>Ask "what does this value mean?" or "should I worry?" — the assistant remembers context so each answer builds on the last conversation.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about-story">
+      <div class="about-story__image">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80"
+             alt="Healthcare worker using a tablet" loading="lazy" />
+      </div>
+      <div class="about-story__content">
+        <h3>Why this exists</h3>
+        <p>Most people in India and beyond get a lab report or feel a new symptom and end up
+        doom-scrolling vague search results, jumping between WhatsApp forwards, or paying for a
+        consultation just to be told "your numbers look fine."</p>
+        <p>This assistant fills the awkward gap between Google and your doctor — a calm, structured
+        first read in your own language, available any time of day, that helps you understand what's
+        on the paper before you act on it.</p>
+        <p>It will <strong>never</strong> replace a doctor. But it can make the visit far more productive.</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h3 class="section-title">Honest about limits</h3>
+      <div class="honest-grid">
+        <div class="honest-card honest-card--ok">
+          <h4>✅ What it is</h4>
+          <ul>
+            <li>An educational AI explainer</li>
+            <li>A second opinion on what numbers mean</li>
+            <li>A way to prep better questions for your doctor</li>
+            <li>Free, open-source, audit-able</li>
+          </ul>
         </div>
-        <div>
-          <h3>What it is — and isn't</h3>
-          <p>It's an AI explainer for symptoms and reports. It is <strong>not</strong> a diagnosis, prescription, or substitute for a qualified clinician. For anything urgent (chest pain, breathing trouble, severe bleeding, stroke signs), call your local emergency number immediately.</p>
+        <div class="honest-card honest-card--no">
+          <h4>❌ What it is not</h4>
+          <ul>
+            <li>A diagnosis or prescription</li>
+            <li>A substitute for a qualified clinician</li>
+            <li>For use in emergencies</li>
+            <li>A store of your medical history (nothing is saved)</li>
+          </ul>
         </div>
-        <div>
-          <h3>Open &amp; free</h3>
-          <p>The full source code lives on <a href="https://github.com/Sandeep22EE65R08/digital-health-assistant" rel="noopener" target="_blank">GitHub</a>. Anyone can read it, audit it, or self-host it. Powered by Google Gemini.</p>
+        <div class="honest-card honest-card--alert">
+          <h4>🚨 In an emergency</h4>
+          <p>Don't use this app. Call your local emergency number immediately:
+          <strong>India: 112 · UK: 999 · US: 911</strong>. Red-flag signs include chest pain,
+          trouble breathing, signs of stroke, severe bleeding, or sudden severe headache.</p>
         </div>
-        <div>
-          <h3>Languages</h3>
-          <p>The assistant responds in English, Hindi, or Hinglish — whichever you pick on each page.</p>
+      </div>
+    </section>
+
+    <section class="founder-card">
+      <div class="founder-card__avatar" aria-hidden="true">SK</div>
+      <div class="founder-card__body">
+        <span class="founder-card__role">Built &amp; maintained by</span>
+        <h3>Sandeep Kumar</h3>
+        <p>Engineer, healthtech enthusiast, and the person who hit "deploy" on this project. The full source
+        is on GitHub — read it, fork it, run it on your own server, or send a pull request.</p>
+        <div class="founder-card__links">
+          <a class="ghost-btn" href="mailto:skshram18106@gmail.com">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            skshram18106@gmail.com
+          </a>
+          <a class="ghost-btn" href="https://github.com/Sandeep22EE65R08/digital-health-assistant" rel="noopener" target="_blank">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2 1-.3 2-.4 3-.4s2 .1 3 .4c2.3-1.5 3.3-1.2 3.3-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.2c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg>
+            View source on GitHub
+          </a>
         </div>
-        <div>
-          <h3>Built by</h3>
-          <p><strong>Sandeep Kumar</strong> — questions, feedback or feature requests are welcome at
-          <a href="mailto:skshram18106@gmail.com">skshram18106@gmail.com</a>.</p>
-        </div>
-        <div>
-          <h3>Tech stack</h3>
-          <p>Python · Flask · Google Gemini (vision + text) · vanilla HTML/CSS/JS. Deployed on Render.</p>
-        </div>
+      </div>
+    </section>
+
+    <section class="about-section about-tech">
+      <h3 class="section-title">Built with</h3>
+      <p class="section-lead">A small, deliberately boring stack. No fancy frontend framework, no database, no tracking.</p>
+      <div class="tech-grid">
+        <div class="tech-chip"><strong>Python</strong> · backend logic</div>
+        <div class="tech-chip"><strong>Flask</strong> · web framework</div>
+        <div class="tech-chip"><strong>Gemini 2.5 Flash</strong> · AI brain (text + vision)</div>
+        <div class="tech-chip"><strong>PyMuPDF</strong> · PDF-to-image rendering</div>
+        <div class="tech-chip"><strong>Vanilla HTML/CSS/JS</strong> · zero build step</div>
+        <div class="tech-chip"><strong>Render</strong> · hosting</div>
       </div>
     </section>
   </main>
