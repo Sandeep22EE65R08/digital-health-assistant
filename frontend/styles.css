@@ -227,6 +227,9 @@ a:hover { color: var(--primary); text-decoration: underline; }
 }
 .ghost-btn:hover { background: var(--primary-soft); color: var(--primary-2); border-color: #bae6fd; }
 
+.cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; justify-content: center; }
+.cta-row .primary-btn, .cta-row .ghost-btn { text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+
 .disclaimer {
   margin-top: 18px; padding: 12px 14px; font-size: 0.8rem; line-height: 1.55;
   color: var(--warn-text); background: var(--warn-bg);
