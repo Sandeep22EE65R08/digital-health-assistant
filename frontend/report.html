@@ -51,19 +51,21 @@
 
     <header class="page-header">
       <h2>Analyze a Medical Report</h2>
-      <p>Upload a lab or test report PDF and we'll explain every value, flag what's outside normal range, and suggest next steps in your language.</p>
+      <p>Upload a lab or test report as a <strong>PDF</strong> or a <strong>photo (JPG/PNG)</strong>
+      and we'll explain every value, flag what's outside normal range, and suggest next steps in your language.</p>
     </header>
 
     <section class="panel report-form">
       <form id="reportForm" autocomplete="off">
         <label class="dropzone" id="reportDropzone">
-          <input id="reportFile" type="file" accept="application/pdf,.pdf" hidden />
+          <input id="reportFile" type="file"
+            accept="application/pdf,.pdf,image/jpeg,image/png,image/webp,.jpg,.jpeg,.png,.webp" hidden />
           <div class="dropzone__inner">
             <span class="dropzone__icon" aria-hidden="true">
               <svg viewBox="0 0 24 24" width="40" height="40" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
             </span>
-            <div class="dropzone__title">Click to choose a PDF or drop it here</div>
-            <div class="dropzone__hint">Max 10 MB · scanned PDFs are read with AI vision</div>
+            <div class="dropzone__title">Click to choose a PDF or photo, or drop it here</div>
+            <div class="dropzone__hint">Max 10 MB · PDF · JPG · PNG · WebP — photos of paper reports work too</div>
             <div id="reportFileName" class="dropzone__file" hidden></div>
           </div>
         </label>
@@ -101,6 +103,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
+  <script src="js/actions.js"></script>
   <script src="js/report.js"></script>
 </body>
 </html>

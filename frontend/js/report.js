@@ -51,15 +51,18 @@
       reportSubmit.disabled = true;
       return;
     }
-    if (!/\.pdf$/i.test(file.name)) {
+    const isPdf = /\.pdf$/i.test(file.name);
+    const isImage = /\.(jpg|jpeg|png|webp)$/i.test(file.name);
+    if (!isPdf && !isImage) {
       reportFileName.hidden = false;
-      reportFileName.textContent = "⚠️ Please choose a PDF file.";
+      reportFileName.textContent = "⚠️ Please choose a PDF or image (JPG, PNG, WebP).";
       reportSubmit.disabled = true;
       return;
     }
     const kb = (file.size / 1024).toFixed(0);
+    const icon = isPdf ? "📄" : "🖼️";
     reportFileName.hidden = false;
-    reportFileName.textContent = `📄 ${file.name} (${kb} KB)`;
+    reportFileName.textContent = `${icon} ${file.name} (${kb} KB)`;
     reportSubmit.disabled = false;
   }
 
@@ -105,8 +108,12 @@
       let banner = "";
       if (data.source === "vision") {
         banner = `<div class="info-note">🔍 No text layer detected — read directly from the page images using AI vision.</div>`;
+      } else if (data.source === "vision-image") {
+        banner = `<div class="info-note">🖼️ Image report — read with AI vision.</div>`;
       }
-      reportResult.innerHTML = banner + renderReply(data);
+      const actions = (typeof window.actionButtonsHTML === "function") ? window.actionButtonsHTML() : "";
+      reportResult.innerHTML = banner + renderReply(data) + actions;
+      if (typeof window.wireActionButtons === "function") window.wireActionButtons(reportResult);
     } catch (err) {
       reportResult.innerHTML = `<div class="error-note">⚠️ ${escapeHTML(err.message)}</div>`;
     } finally {

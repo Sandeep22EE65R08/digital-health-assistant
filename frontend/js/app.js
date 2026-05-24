@@ -19,7 +19,8 @@
   function renderReply(data) {
     const md = (data && data.reply) || "";
     const html = window.DOMPurify.sanitize(window.marked.parse(md));
-    return `<div class="doc">${html}</div>`;
+    const actions = (typeof window.actionButtonsHTML === "function") ? window.actionButtonsHTML() : "";
+    return `<div class="doc">${html}</div>${actions}`;
   }
 
   function addMessage(role, html, opts = {}) {
@@ -85,6 +86,7 @@
     try {
       const data = await postJSON("/api/analyze", readIntake());
       thinking.innerHTML = renderReply(data);
+      if (typeof window.wireActionButtons === "function") window.wireActionButtons(thinking);
       conversation.push({ role: "user", content: displayText });
       conversation.push({ role: "assistant", content: data.reply });
     } catch (err) {
@@ -102,6 +104,7 @@
         history: conversation
       });
       thinking.innerHTML = renderReply(data);
+      if (typeof window.wireActionButtons === "function") window.wireActionButtons(thinking);
       conversation.push({ role: "user", content: question });
       conversation.push({ role: "assistant", content: data.reply });
     } catch (err) {

@@ -127,6 +127,13 @@ MAX_PDF_BYTES = 10 * 1024 * 1024  # 10 MB
 MAX_PDF_TEXT_CHARS = 18000
 MAX_VISION_PAGES = 6           # cap pages sent to vision (cost / latency)
 VISION_RENDER_DPI = 150        # render resolution for scanned pages
+ALLOWED_IMAGE_EXTS = (".jpg", ".jpeg", ".png", ".webp")
+IMAGE_MIME_BY_EXT = {
+    ".jpg": "image/jpeg",
+    ".jpeg": "image/jpeg",
+    ".png": "image/png",
+    ".webp": "image/webp",
+}
 
 
 def _extract_pdf_text(pdf_bytes: bytes) -> str:
@@ -179,9 +186,22 @@ def _render_pdf_pages_to_png(pdf_bytes: bytes, max_pages: int = MAX_VISION_PAGES
 def _vision_analyze_pdf(pdf_bytes: bytes, language: str) -> str:
     """Send PDF pages as images to the AI model and get a markdown report."""
     pngs = _render_pdf_pages_to_png(pdf_bytes)
+    return _vision_analyze_images(
+        [(p, "image/png") for p in pngs],
+        language,
+        source_label="PDF",
+    )
+
+
+def _vision_analyze_images(
+    images: list[tuple[bytes, str]],
+    language: str,
+    source_label: str = "image",
+) -> str:
+    """Send one or more report images (bytes, mime) to the AI model."""
     prelude = (
-        f"The user has uploaded a medical/lab report as a PDF "
-        f"({len(pngs)} page image(s) attached). "
+        f"The user has uploaded a medical/lab report as a {source_label} "
+        f"({len(images)} image(s) attached). "
         "Read EVERY value, parameter, reference range and note you can see in "
         "the image(s) — including any handwritten or printed reference ranges.\n"
         f"Respond in: {language}\n\n"
@@ -189,11 +209,11 @@ def _vision_analyze_pdf(pdf_bytes: bytes, language: str) -> str:
     content: list[dict] = [
         {"type": "text", "text": prelude + REPORT_ANALYSIS_INSTRUCTION}
     ]
-    for png in pngs:
-        b64 = base64.b64encode(png).decode("ascii")
+    for img_bytes, mime in images:
+        b64 = base64.b64encode(img_bytes).decode("ascii")
         content.append({
             "type": "image_url",
-            "image_url": {"url": f"data:image/png;base64,{b64}"},
+            "image_url": {"url": f"data:{mime};base64,{b64}"},
         })
     return _call_ai([
         {"role": "system", "content": SYSTEM_PROMPT},
@@ -205,22 +225,54 @@ def _vision_analyze_pdf(pdf_bytes: bytes, language: str) -> str:
 def analyze_report_endpoint():
     upload = request.files.get("report")
     if upload is None or not upload.filename:
-        return jsonify({"error": "Please attach a PDF file."}), 400
-    if not upload.filename.lower().endswith(".pdf"):
-        return jsonify({"error": "Only PDF files are supported."}), 400
+        return jsonify({"error": "Please attach a PDF or image file."}), 400
+    fname_lower = upload.filename.lower()
+    is_pdf = fname_lower.endswith(".pdf")
+    is_image = fname_lower.endswith(ALLOWED_IMAGE_EXTS)
+    if not (is_pdf or is_image):
+        return jsonify({"error": "Only PDF or image files (JPG, PNG, WebP) are supported."}), 400
 
-    pdf_bytes = upload.stream.read()
-    if not pdf_bytes:
+    file_bytes = upload.stream.read()
+    if not file_bytes:
         return jsonify({"error": "Uploaded file is empty."}), 400
-    if len(pdf_bytes) > MAX_PDF_BYTES:
+    if len(file_bytes) > MAX_PDF_BYTES:
         return jsonify({"error": "File is too large. Maximum size is 10 MB."}), 400
 
+    language = (request.form.get("language") or "English").strip()
+
+    # Image branch: skip PDF text extraction, go straight to vision.
+    if is_image:
+        if not AI_API_KEY:
+            return jsonify({
+                "error": "Image analysis requires Live AI mode. "
+                         "Enable an AI key or upload a text-based PDF."
+            }), 400
+        ext = "." + fname_lower.rsplit(".", 1)[-1]
+        mime = IMAGE_MIME_BY_EXT.get(ext, "image/jpeg")
+        try:
+            reply = _vision_analyze_images(
+                [(file_bytes, mime)], language, source_label="image"
+            )
+            payload = _ai_payload(reply)
+            payload["extracted_chars"] = 0
+            payload["source"] = "vision-image"
+            return jsonify(payload)
+        except Exception as exc:
+            intake = {"symptoms": "", "language": language, "reportText": ""}
+            payload = _fallback_payload(
+                fallback_analyze(intake),
+                error_note=f"Image analysis failed: {exc}",
+                mode="demo-fallback",
+            )
+            payload["source"] = "vision-failed"
+            return jsonify(payload)
+
+    pdf_bytes = file_bytes
     try:
         report_text = _extract_pdf_text(pdf_bytes)
     except ValueError as exc:
         return jsonify({"error": str(exc)}), 400
 
-    language = (request.form.get("language") or "English").strip()
     has_text = bool(report_text)
     used_vision = False
 
