@@ -657,14 +657,31 @@ a:hover { color: var(--primary); text-decoration: underline; }
   margin: 0; color: #78350f; font-size: 0.92rem; line-height: 1.6;
 }
 
-/* --- Home: hero product screenshot --- */
+/* --- Home: hero product screenshot / image --- */
 .hero__shot {
   position: relative; border-radius: 18px; overflow: hidden;
   background: var(--panel); border: 1px solid var(--panel-border);
   box-shadow: var(--shadow-lg);
+  aspect-ratio: 4 / 3;
 }
 .hero__shot img {
+  display: block; width: 100%; height: 100%; object-fit: cover;
+}
+
+/* --- How it works: screenshot section --- */
+.screenshot-section { margin-top: 48px; text-align: center; }
+.screenshot-frame {
+  margin: 22px 0 0; padding: 14px;
+  background: linear-gradient(135deg, var(--primary-soft) 0%, var(--accent-soft) 100%);
+  border-radius: 18px; box-shadow: var(--shadow-lg);
+}
+.screenshot-frame img {
   display: block; width: 100%; height: auto;
+  border-radius: 10px; border: 1px solid var(--panel-border);
+  background: var(--panel);
+}
+.screenshot-frame figcaption {
+  margin-top: 10px; font-size: 0.82rem; color: var(--muted);
 }
 
 /* --- Home: stats row --- */
