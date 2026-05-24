@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary SEO -->
-  <title>AI Digital Health Assistant — Free Symptom Checker & Lab Report Analyzer</title>
-  <meta name="description" content="Free open-source AI digital health assistant. Analyze symptoms, chat with an AI doctor, and get instant breakdown of medical lab reports (PDF) with normal ranges, doctor recommendations, and lifestyle advice. Educational use only — not a substitute for professional medical care." />
+  <title>AI Digital Health Assistant — Understand Symptoms &amp; Medical Reports in Seconds</title>
+  <meta name="description" content="Understand symptoms, lab reports and medical terms in seconds with AI. Free Hindi &amp; English digital health assistant — upload PDFs or photos, ask follow-up questions, and get patient-friendly explanations powered by Google Gemini." />
   <meta name="keywords" content="digital health assistant, AI symptom checker, free medical AI, lab report analyzer, AI doctor, health chatbot, PDF medical report analysis, Gemini health, open source health app, AI health advisor" />
   <meta name="author" content="Sandeep Kumar" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -89,51 +89,222 @@
         <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
         Free · Open-source · Educational use
       </span>
-      <h2>Your friendly <span>AI health companion</span> for symptoms &amp; lab reports</h2>
+      <h2>Understand Symptoms &amp; <span>Medical Reports</span> in Seconds with AI</h2>
       <p class="hero__lead">
-        Describe what you're feeling or upload a lab report — get a calm, clear
-        explanation in your language, with normal ranges and next steps. Never a substitute
-        for a doctor, always here to help you understand.
+        Get clear explanations for symptoms, lab reports and medical terms in Hindi &amp; English.
+        Upload reports, ask questions, and receive patient-friendly insights powered by AI.
       </p>
       <div class="hero__cta">
         <a href="/symptoms.html" class="primary-btn">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-          Describe symptoms
+          Check Symptoms
         </a>
         <a href="/report.html" class="ghost-btn">
           <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Analyze a PDF or photo
+          Analyze Report
         </a>
       </div>
     </div>
-    <div class="hero__image">
-      <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80"
-           alt="Doctor reviewing medical chart with stethoscope" loading="eager" />
+    <div class="hero__preview" aria-hidden="true">
+      <div class="preview-card">
+        <div class="preview-card__head">
+          <span class="preview-dot preview-dot--red"></span>
+          <span class="preview-dot preview-dot--amber"></span>
+          <span class="preview-dot preview-dot--green"></span>
+          <span class="preview-card__title">AI report analysis</span>
+        </div>
+        <div class="preview-row">
+          <div class="preview-row__label">Hemoglobin</div>
+          <div class="preview-row__value preview-row__value--low">10.5 g/dL <span>↓</span></div>
+        </div>
+        <div class="preview-row__sub">Normal: 12 – 15 g/dL</div>
+        <div class="preview-row preview-row--note">
+          <p>Slightly below normal range — may indicate mild anemia. Consider discussing iron levels with your doctor.</p>
+        </div>
+        <div class="preview-row">
+          <div class="preview-row__label">Glucose (fasting)</div>
+          <div class="preview-row__value preview-row__value--ok">92 mg/dL ✓</div>
+        </div>
+        <div class="preview-row__sub">Normal: 70 – 100 mg/dL</div>
+        <div class="preview-chat">
+          <span class="preview-chat__bubble">What does low hemoglobin mean for me?</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="features" aria-label="What this assistant does">
-    <article class="feature">
-      <span class="feature__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </span>
-      <h3>Symptom analysis</h3>
-      <p>Describe how you feel — get likely causes, red flags, and home-care suggestions in plain language.</p>
-    </article>
-    <article class="feature">
-      <span class="feature__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="13" x2="15" y2="13"/><line x1="9" y1="17" x2="13" y2="17"/></svg>
-      </span>
-      <h3>Lab report decoding</h3>
-      <p>Upload a PDF or photo (JPG/PNG) of a lab report. Each value is mapped to its normal range with an easy-to-read summary.</p>
-    </article>
-    <article class="feature">
-      <span class="feature__icon" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-      </span>
-      <h3>Follow-up chat</h3>
-      <p>Ask questions about your results — the assistant remembers context and keeps the explanation clear.</p>
-    </article>
+  <section class="stats-row" aria-label="At a glance">
+    <div class="stat-card">
+      <div class="stat-card__num">3</div>
+      <div class="stat-card__label">Languages Supported</div>
+      <div class="stat-card__sub">English · Hindi · Hinglish</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__num">24/7</div>
+      <div class="stat-card__label">Availability</div>
+      <div class="stat-card__sub">No waiting room, no queue</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__num">AI</div>
+      <div class="stat-card__label">Powered by Gemini</div>
+      <div class="stat-card__sub">Google's multimodal model</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-card__num">100%</div>
+      <div class="stat-card__label">Free &amp; Open Source</div>
+      <div class="stat-card__sub">No signup, no paywalls</div>
+    </div>
+  </section>
+
+  <section id="how-it-works" class="content-section">
+    <div class="content-inner">
+      <h2 class="section-title">How It Works</h2>
+      <p class="section-lead">Four simple steps from question to clear answer.</p>
+      <ol class="steps-row">
+        <li class="step-card">
+          <div class="step-card__num">1</div>
+          <div class="step-card__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3>Describe Symptoms</h3>
+          <p>Type how you feel in your own words — English, Hindi or Hinglish.</p>
+        </li>
+        <li class="step-card">
+          <div class="step-card__num">2</div>
+          <div class="step-card__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </div>
+          <h3>Upload Report</h3>
+          <p>Drop a PDF or a phone photo of your lab report — scans and handwriting included.</p>
+        </li>
+        <li class="step-card">
+          <div class="step-card__num">3</div>
+          <div class="step-card__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          </div>
+          <h3>AI Analyzes</h3>
+          <p>Gemini reads everything — maps each value to its normal range and looks for red flags.</p>
+        </li>
+        <li class="step-card">
+          <div class="step-card__num">4</div>
+          <div class="step-card__icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          </div>
+          <h3>Get Clear Explanations</h3>
+          <p>Plain-language summary, suggested specialist, and follow-up chat to ask anything.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="content-section content-section--alt" aria-label="Key features">
+    <div class="content-inner">
+      <h2 class="section-title">Key Features</h2>
+      <p class="section-lead">Everything you need to make sense of a symptom or a lab report.</p>
+      <div class="features features--six">
+        <article class="feature">
+          <span class="feature__icon feature__icon--blue" aria-hidden="true">🩺</span>
+          <h3>Symptom Analysis</h3>
+          <p>Describe how you feel and get possible causes, severity hints and clear guidance on what to do next.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon feature__icon--cyan" aria-hidden="true">📄</span>
+          <h3>Lab Report Analysis</h3>
+          <p>Upload a PDF or phone photo. Each value is mapped to its normal range with a friendly explanation.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon feature__icon--red" aria-hidden="true">🚨</span>
+          <h3>Emergency Detection</h3>
+          <p>Flags red-flag symptoms like chest pain or stroke signs and points you straight to emergency services.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon feature__icon--green" aria-hidden="true">👨‍⚕️</span>
+          <h3>Specialist Recommendations</h3>
+          <p>Suggests which type of doctor to consult based on the symptoms or report findings.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon feature__icon--violet" aria-hidden="true">💬</span>
+          <h3>Follow-up Chat</h3>
+          <p>Ask unlimited follow-up questions. The assistant remembers your earlier messages for context.</p>
+        </article>
+        <article class="feature">
+          <span class="feature__icon feature__icon--amber" aria-hidden="true">🌐</span>
+          <h3>Hindi, English &amp; Hinglish</h3>
+          <p>Healthcare information in the language you're most comfortable with — switch any time on every page.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section" aria-label="Real example of AI analysis">
+    <div class="content-inner">
+      <h2 class="section-title">Real AI Analysis Examples</h2>
+      <p class="section-lead">See how the assistant explains common lab values in plain language.</p>
+      <div class="example-grid">
+        <article class="example-card">
+          <header class="example-card__head">
+            <span class="example-card__label">Hemoglobin</span>
+            <span class="example-card__value example-card__value--low">10.5 g/dL <span>↓</span></span>
+          </header>
+          <p class="example-card__range">Normal range: <strong>12 – 15 g/dL</strong></p>
+          <div class="example-card__ai">
+            <span class="example-card__ai-tag">AI explanation</span>
+            <p>Your hemoglobin is slightly below the normal range, which may indicate mild anemia. Consider discussing iron levels with your doctor.</p>
+          </div>
+        </article>
+        <article class="example-card">
+          <header class="example-card__head">
+            <span class="example-card__label">Fasting Glucose</span>
+            <span class="example-card__value example-card__value--high">118 mg/dL <span>↑</span></span>
+          </header>
+          <p class="example-card__range">Normal range: <strong>70 – 100 mg/dL</strong></p>
+          <div class="example-card__ai">
+            <span class="example-card__ai-tag">AI explanation</span>
+            <p>Slightly elevated — could be early signs of impaired fasting glucose. Repeat the test and discuss diet and HbA1c with your physician.</p>
+          </div>
+        </article>
+        <article class="example-card">
+          <header class="example-card__head">
+            <span class="example-card__label">TSH (Thyroid)</span>
+            <span class="example-card__value example-card__value--ok">2.4 mIU/L ✓</span>
+          </header>
+          <p class="example-card__range">Normal range: <strong>0.4 – 4.0 mIU/L</strong></p>
+          <div class="example-card__ai">
+            <span class="example-card__ai-tag">AI explanation</span>
+            <p>Within the healthy range — thyroid function looks normal. No action needed based on this value alone.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section content-section--alt" aria-label="Who is this for">
+    <div class="content-inner">
+      <h2 class="section-title">Who Is This For?</h2>
+      <p class="section-lead">Designed for anyone who's ever stared at a medical report and felt lost.</p>
+      <div class="audience-grid">
+        <article class="audience-card">
+          <div class="audience-card__icon">👤</div>
+          <h3>Patients</h3>
+          <p>Understand your reports before the doctor's appointment so you can ask better questions.</p>
+        </article>
+        <article class="audience-card">
+          <div class="audience-card__icon">👨‍👩‍👧</div>
+          <h3>Parents</h3>
+          <p>Quickly understand your child's lab results without panic-searching online.</p>
+        </article>
+        <article class="audience-card">
+          <div class="audience-card__icon">🧓</div>
+          <h3>Senior Citizens</h3>
+          <p>Simple Hindi or English explanations without confusing medical jargon.</p>
+        </article>
+        <article class="audience-card">
+          <div class="audience-card__icon">🏥</div>
+          <h3>Clinics &amp; Health Startups</h3>
+          <p>Embed or self-host as a patient-education layer alongside your existing tools.</p>
+        </article>
+      </div>
+    </div>
   </section>
 
   <section id="faq" class="content-section">
@@ -155,6 +326,10 @@
         <details class="faq-item">
           <summary>Which languages are supported?</summary>
           <p>English, Hindi, and Hinglish. Pick your language on each page and the assistant will reply in that language.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Can the AI make mistakes?</summary>
+          <p>Yes. AI models can misinterpret values, miss context or hallucinate. Treat every answer as a starting point for a conversation with a qualified clinician, never as a final word.</p>
         </details>
         <details class="faq-item">
           <summary>Is it really free?</summary>
@@ -181,13 +356,63 @@
     </div>
   </section>
 
-  <footer class="site-footer">
-    Built with care for educational use only · Not a substitute for medical advice ·
-    <a href="/about.html">About</a> ·
-    <a href="/how-it-works.html">How it works</a> ·
-    <a href="#faq">FAQ</a> ·
-    <a href="#contact">Contact</a> ·
-    <a href="https://github.com/Sandeep22EE65R08/digital-health-assistant" rel="noopener" target="_blank">Source on GitHub</a>
+  <section class="cta-section" aria-label="Get started">
+    <div class="cta-section__inner">
+      <h2>Ready to Understand Your Health Better?</h2>
+      <p>Two clicks away from a clear, calm explanation of your symptoms or lab report.</p>
+      <div class="hero__cta cta-section__buttons">
+        <a href="/symptoms.html" class="primary-btn">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          Check Symptoms
+        </a>
+        <a href="/report.html" class="ghost-btn ghost-btn--on-dark">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Analyze Report
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer site-footer--columns">
+    <div class="footer-grid">
+      <div class="footer-col footer-col--brand">
+        <div class="footer-brand">
+          <span class="logo" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </span>
+          <strong>AI Digital Health Assistant</strong>
+        </div>
+        <p class="footer-tag">Calm, clear AI guidance for symptoms and lab reports. Educational use only — not a substitute for professional medical care.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Project</h4>
+        <ul>
+          <li><a href="/about.html">About</a></li>
+          <li><a href="/how-it-works.html">How it works</a></li>
+          <li><a href="https://github.com/Sandeep22EE65R08/digital-health-assistant" rel="noopener" target="_blank">GitHub Repository</a></li>
+          <li><a href="/about.html#tech-stack">Technology Stack</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Use the app</h4>
+        <ul>
+          <li><a href="/symptoms.html">Symptom Checker</a></li>
+          <li><a href="/report.html">Analyze Report</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal &amp; Contact</h4>
+        <ul>
+          <li><a href="/about.html#disclaimer-title">Disclaimer</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="mailto:skshram18106@gmail.com">skshram18106@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © <span id="footerYear">2025</span> AI Digital Health Assistant · Built by Sandeep Kumar
+    </div>
   </footer>
 
   <!-- FAQ structured data for richer Google results -->
@@ -204,6 +429,8 @@
         "acceptedAnswer": { "@type": "Answer", "text": "PDF (both text-based and scanned), plus photos in JPG, PNG and WebP up to 10 MB. Scanned PDFs and photos are read by AI vision." } },
       { "@type": "Question", "name": "Which languages are supported?",
         "acceptedAnswer": { "@type": "Answer", "text": "English, Hindi, and Hinglish." } },
+      { "@type": "Question", "name": "Can the AI make mistakes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. AI models can misinterpret values, miss context or hallucinate. Treat every answer as a starting point for a conversation with a qualified clinician, never as a final word." } },
       { "@type": "Question", "name": "Is it really free?",
         "acceptedAnswer": { "@type": "Answer", "text": "Yes — fully free, no signup, no paywalls. The source code is open on GitHub." } },
       { "@type": "Question", "name": "What should I do in an emergency?",
@@ -214,5 +441,9 @@
 
   <script src="js/actions.js"></script>
   <script src="js/home.js"></script>
+  <script>
+    var _y = document.getElementById('footerYear');
+    if (_y) _y.textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
