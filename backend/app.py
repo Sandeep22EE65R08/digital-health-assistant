@@ -368,17 +368,40 @@ def chat_endpoint():
 
 
 # --- Serve the frontend (optional convenience) ---
+# Cache policy: HTML is never cached (so deploys are picked up instantly);
+# CSS/JS/images are revalidated each visit (no-cache, must-revalidate) so
+# the browser always asks the server "is this still fresh?" instead of
+# silently serving a stale copy.
+_NEVER_CACHE_EXT = {".html", ".htm"}
+_REVALIDATE_EXT = {".css", ".js", ".mjs", ".json", ".xml", ".svg",
+                   ".png", ".jpg", ".jpeg", ".webp", ".gif", ".ico", ".txt"}
+
+
+def _apply_cache_headers(response, path: str):
+    ext = Path(path).suffix.lower()
+    if ext in _NEVER_CACHE_EXT or path in ("", "/"):
+        response.headers["Cache-Control"] = "no-store, no-cache, must-revalidate, max-age=0"
+        response.headers["Pragma"] = "no-cache"
+        response.headers["Expires"] = "0"
+    elif ext in _REVALIDATE_EXT:
+        response.headers["Cache-Control"] = "no-cache, must-revalidate"
+    return response
+
+
 @app.get("/")
 def index():
-    return send_from_directory(FRONTEND_DIR, "index.html")
+    response = send_from_directory(FRONTEND_DIR, "index.html")
+    return _apply_cache_headers(response, "index.html")
 
 
 @app.get("/<path:path>")
 def static_files(path: str):
     target = FRONTEND_DIR / path
     if target.is_file():
-        return send_from_directory(FRONTEND_DIR, path)
-    return send_from_directory(FRONTEND_DIR, "index.html")
+        response = send_from_directory(FRONTEND_DIR, path)
+        return _apply_cache_headers(response, path)
+    response = send_from_directory(FRONTEND_DIR, "index.html")
+    return _apply_cache_headers(response, "index.html")
 
 
 if __name__ == "__main__":
