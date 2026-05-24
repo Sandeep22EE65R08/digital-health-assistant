@@ -657,54 +657,14 @@ a:hover { color: var(--primary); text-decoration: underline; }
   margin: 0; color: #78350f; font-size: 0.92rem; line-height: 1.6;
 }
 
-/* --- Home: product preview card (replaces hero stock photo) --- */
-.hero__preview {
-  position: relative; padding: 18px;
-  background: linear-gradient(135deg, var(--primary-soft) 0%, var(--accent-soft) 100%);
-  border-radius: 24px; box-shadow: var(--shadow-lg);
-}
-.preview-card {
+/* --- Home: hero product screenshot --- */
+.hero__shot {
+  position: relative; border-radius: 18px; overflow: hidden;
   background: var(--panel); border: 1px solid var(--panel-border);
-  border-radius: 16px; padding: 16px 18px;
-  box-shadow: 0 12px 30px -16px rgba(15, 23, 42, 0.2);
-  display: flex; flex-direction: column; gap: 8px;
+  box-shadow: var(--shadow-lg);
 }
-.preview-card__head {
-  display: flex; align-items: center; gap: 6px; padding-bottom: 10px;
-  border-bottom: 1px solid var(--panel-border); margin-bottom: 4px;
-}
-.preview-dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
-.preview-dot--red { background: #ef4444; }
-.preview-dot--amber { background: #f59e0b; }
-.preview-dot--green { background: #10b981; }
-.preview-card__title {
-  margin-left: 10px; font-size: 0.78rem; color: var(--muted);
-  font-weight: 600; letter-spacing: 0.02em;
-}
-.preview-row {
-  display: flex; justify-content: space-between; align-items: baseline;
-  font-size: 0.92rem;
-}
-.preview-row__label { color: var(--text); font-weight: 600; }
-.preview-row__value { font-family: "Space Grotesk", "Inter", sans-serif; font-weight: 700; }
-.preview-row__value--low { color: var(--danger); }
-.preview-row__value--high { color: #b45309; }
-.preview-row__value--ok { color: var(--success); }
-.preview-row__value span { font-weight: 700; margin-left: 2px; }
-.preview-row__sub { font-size: 0.78rem; color: var(--muted); margin-top: -4px; }
-.preview-row--note {
-  display: block; margin-top: 4px; padding: 10px 12px;
-  background: var(--primary-soft); border-radius: 10px;
-  border-left: 3px solid var(--primary);
-}
-.preview-row--note p {
-  margin: 0; font-size: 0.85rem; color: var(--text-soft); line-height: 1.5;
-}
-.preview-chat { margin-top: 8px; display: flex; justify-content: flex-end; }
-.preview-chat__bubble {
-  background: var(--primary); color: #fff; padding: 8px 14px;
-  border-radius: 14px 14px 4px 14px; font-size: 0.82rem; max-width: 80%;
-  box-shadow: 0 4px 12px -6px rgba(14, 165, 233, 0.6);
+.hero__shot img {
+  display: block; width: 100%; height: auto;
 }
 
 /* --- Home: stats row --- */
